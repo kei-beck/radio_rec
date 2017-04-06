@@ -1,0 +1,7 @@
+db/*.sqlite3
+tmp/避難所
+tmp/**/*.flv
+tmp/**/*.m4a
+tmp/**/*.swf
+tmp/**/*.png
+log/*.log
