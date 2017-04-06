@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  radiko_station_id: MyString
+  radiru_station_id: MyString
+  name: MyString
+  ascii_name: MyString
+
+two:
+  radiko_station_id: MyString
+  radiru_station_id: MyString
+  name: MyString
+  ascii_name: MyString

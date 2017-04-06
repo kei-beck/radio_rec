@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  keyword: MyString
+  title_flg: false
+  sub_title_flg: false
+  performer_flg: false
+  description_flg: false
+  information_flg: false
+  twitter_flg: false
+
+two:
+  keyword: MyString
+  title_flg: false
+  sub_title_flg: false
+  performer_flg: false
+  description_flg: false
+  information_flg: false
+  twitter_flg: false
