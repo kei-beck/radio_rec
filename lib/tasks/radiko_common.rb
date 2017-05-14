@@ -61,14 +61,23 @@ class Tasks::RadikoCommon < Tasks::RadioRecCommon
   end
   
   def player_download
-    open("#{@tmp_dir}/#{PLAYER_NAME}", "wb") do | saved_file |
+    tmp_file = "#{@tmp_dir}/tmp_#{PLAYER_NAME}"
+    open(tmp_file, "wb") do | saved_file |
       open(PLAYER_URL, 'rb') do | read_file |
         saved_file.write(read_file.read)
       end
     end
+    # DL出来た場合は入れ替える
+    if File.size?(tmp_file)
+      File.delete PLAYER_NAME
+      File.rename(tmp_file, PLAYER_NAME)
+    else
+      File.delete tmp_file
+    end
     "#{@tmp_dir}/#{PLAYER_NAME}"
   rescue
-    raise "プレイヤーのダウンロードに失敗しました。¥n#{PLAYER_URL}"
+    p "プレイヤーのダウンロードに失敗しました。¥n#{PLAYER_URL}"
+    "#{@tmp_dir}/#{PLAYER_NAME}"
   end
 
   def pick_keydata(player)
